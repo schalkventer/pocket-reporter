@@ -2,7 +2,7 @@
 
 backend:
   name: github
-  repo: OpenUpSA/pocket-reporter
+  repo: schalkventer/pocket-reporter
 publish_mode: editorial_workflow
 media_folder: static/assets
 public_folder: assets
