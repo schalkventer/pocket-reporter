@@ -1,5 +1,8 @@
 ---
 title: Test
-Content: Test
+Content: |-
+  Test
+
+  Editing test resource
 ---
 
