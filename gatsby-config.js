@@ -110,14 +110,25 @@ const createSentryConfig = ({ dsn }) => {
 };
 
 
+const filesystemConfig = {
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    name: `data`,
+    path: `${__dirname}/src/data/`,
+  },
+}
+
+
 module.exports = {
   siteMetadata,
   plugins: [
     materialUiConfig,
+    filesystemConfig,
     ...(buildManifestConfig({ name: nameValue, theme: themeValue, background: backgroundValue })),
     ...(createHotjarConfig({ id: HOTJAR_ID, sv: HOTJAR_SNIPPET_VERSION })),
     ...(createAnalyticsConfig({ trackingId: GOOGLE_ANALYTICS_ID })),
     ...(createSentryConfig({ dsn: SENTRY_DNS })),
+    'gatsby-transformer-remark',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
