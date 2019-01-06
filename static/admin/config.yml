@@ -3,367 +3,442 @@
 backend:
   name: github
   repo: schalkventer/pocket-reporter
-publish_mode: editorial_workflow
 media_folder: static/assets
 public_folder: assets
 editor:
    preview: false
 
 collections:
+  - 
+    name: foldersPagesCollection
+    label: Folders Pages
+    folder: src/data/pages/folders/
+    create: true
+    fields:
+      -
+        name: title
+        label: Title
+        widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Pages
+      -
+        name: page
+        label: Page
+        widget: hidden
+        default: Folders      
+      -
+        name: storyPages
+        label: Story Pages
+        widget: list
+        required: false
+        field:
+          name: storyPage
+          label: Story Page Title
+          widget: string
+      -
+        name: resourcesPages
+        label: Resources Pages
+        widget: list
+        required: false
+        field:
+          name: resourcesPage
+          label: Resources Title Page
+          widget: string
   -
-    name: questionsPages
+    name: questionsPagesCollection
     label: Questions Pages
     folder: src/data/pages/questions/
     create: true
     fields:
-
-
       -
-        name: englishTitle
-        label: English Title
-        widget: string
-        require: true
-
-
+        name: type
+        label: Type
+        widget: hidden
+        default: Pages
       -
-        name: englishQuestions
-        label: English Questions
-        widget: relation
-        require: true
-        collection: englishQuestions
-        searchFields: 
-          - name
-        valueField: name
+        name: page
+        label: Page
+        widget: hidden
+        default: Questions 
+
+      - 
+        name: English
+        label: English
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: true
 
 
-
-      -
-        name: afrikaansTitle
-        label: Afrikaans Title
-        widget: string
-        require: false
-
-
-      -
-        name: afrikaansQuestions
-        label: Afrikaans Questions
-        widget: relation
-        require: false
-        collection: afrikaansQuestions
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: true
 
 
+      - 
+        name: Afrikaans
+        label: Afrikaans
+        widget: object
+        fields:
 
-      -
-        name: spanishTitle
-        label: Spanish Title
-        widget: string
-        require: false
-
-
-      -
-        name: spanishQuestions
-        label: Spanish Questions
-        widget: relation
-        require: false
-        collection: spanishQuestions
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
 
 
-
-      -
-        name: xhosaTitle
-        label: Xhosa Title
-        widget: string
-        require: false
-
-
-      -
-        name: xhosaQuestions
-        label: Xhosa Questions
-        widget: relation
-        require: false
-        collection: xhosaQuestions
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: false
 
 
+      - 
+        name: Spanish
+        label: Spanish
+        widget: object
+        fields:
 
-      -
-        name: northernSothoTitle
-        label: Northern Sotho Title
-        widget: string
-        require: false
-
-
-      -
-        name: northernSothoQuestions
-        label: Northern Sotho Questions
-        widget: relation
-        require: false
-        collection: northernSothoQuestions
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
 
 
-
-      -
-        name: portugueseTitle
-        label: Portuguese Title
-        widget: string
-        require: false
-
-
-      -
-        name: portugueseQuestions
-        label: Portuguese Questions
-        widget: relation
-        require: false
-        collection: portugueseQuestions
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: false
 
 
+      - 
+        name: Xhosa
+        label: Xhosa
+        widget: object
+        fields:
 
-      -
-        name: southernSothoTitle
-        label: Southern Sotho Title
-        widget: string
-        require: false
-
-
-      -
-        name: southernSothoQuestions
-        label: Southern Sotho Questions
-        widget: relation
-        require: false
-        collection: southernSothoQuestions
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
 
 
-
-      -
-        name: tswanaTitle
-        label: Tswana Title
-        widget: string
-        require: false
-
-
-      -
-        name: tswanaQuestions
-        label: Tswana Questions
-        widget: relation
-        require: false
-        collection: tswanaQuestions
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: false
 
 
+      - 
+        name: Northern Sotho
+        label: Northern Sotho
+        widget: object
+        fields:
 
-      -
-        name: zuluTitle
-        label: Zulu Title
-        widget: string
-        require: false
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
 
 
-      -
-        name: zuluQuestions
-        label: Zulu Questions
-        widget: relation
-        require: false
-        collection: zuluQuestions
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: false
+
+
+      - 
+        name: Portuguese
+        label: Portuguese
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
+
+
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: false
+
+
+      - 
+        name: Southern Sotho
+        label: Southern Sotho
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
+
+
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: false
+
+
+      - 
+        name: Tswana
+        label: Tswana
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
+
+
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: false
+
+
+      - 
+        name: Zulu
+        label: Zulu
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
+
+
+          -
+            name: questions
+            label: questions Title
+            widget: string
+            required: false
 
 
   -
-    name: resourcesPages
+    name: resourcesPagesCollection
     label: Resources Pages
     folder: src/data/pages/resources/
     create: true
     fields:
-      
-
       -
-        name: englishTitle
-        label: English Title
-        widget: string
-        require: true
-
-
+        name: type
+        label: Type
+        widget: hidden
+        default: Pages
       -
-        name: englishResource
-        label: English Resource
-        widget: relation
-        require: true
-        collection: englishResource
-        searchFields: 
-          - name
-        valueField: name
+        name: page
+        label: Page
+        widget: hidden
+        default: Resources 
+
+      - 
+        name: English
+        label: English
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: true
 
 
-
-      -
-        name: afrikaansTitle
-        label: Afrikaans Title
-        widget: string
-        require: false
-
-
-      -
-        name: afrikaansResource
-        label: Afrikaans Resource
-        widget: relation
-        require: false
-        collection: afrikaansResource
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: true
 
 
+      - 
+        name: Afrikaans
+        label: Afrikaans
+        widget: object
+        fields:
 
-      -
-        name: spanishTitle
-        label: Spanish Title
-        widget: string
-        require: false
-
-
-      -
-        name: spanishResource
-        label: Spanish Resource
-        widget: relation
-        require: false
-        collection: spanishResource
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
 
 
-
-      -
-        name: xhosaTitle
-        label: Xhosa Title
-        widget: string
-        require: false
-
-
-      -
-        name: xhosaResource
-        label: Xhosa Resource
-        widget: relation
-        require: false
-        collection: xhosaResource
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: false
 
 
+      - 
+        name: Spanish
+        label: Spanish
+        widget: object
+        fields:
 
-      -
-        name: northernSothoTitle
-        label: Northern Sotho Title
-        widget: string
-        require: false
-
-
-      -
-        name: northernSothoResource
-        label: Northern Sotho Resource
-        widget: relation
-        require: false
-        collection: northernSothoResource
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
 
 
-
-      -
-        name: portugueseTitle
-        label: Portuguese Title
-        widget: string
-        require: false
-
-
-      -
-        name: portugueseResource
-        label: Portuguese Resource
-        widget: relation
-        require: false
-        collection: portugueseResource
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: false
 
 
+      - 
+        name: Xhosa
+        label: Xhosa
+        widget: object
+        fields:
 
-      -
-        name: southernSothoTitle
-        label: Southern Sotho Title
-        widget: string
-        require: false
-
-
-      -
-        name: southernSothoResource
-        label: Southern Sotho Resource
-        widget: relation
-        require: false
-        collection: southernSothoResource
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
 
 
-
-      -
-        name: tswanaTitle
-        label: Tswana Title
-        widget: string
-        require: false
-
-
-      -
-        name: tswanaResource
-        label: Tswana Resource
-        widget: relation
-        require: false
-        collection: tswanaResource
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: false
 
 
+      - 
+        name: Northern Sotho
+        label: Northern Sotho
+        widget: object
+        fields:
 
-      -
-        name: zuluTitle
-        label: Zulu Title
-        widget: string
-        require: false
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
 
 
-      -
-        name: zuluResource
-        label: Zulu Resource
-        widget: relation
-        require: false
-        collection: zuluResource
-        searchFields: 
-          - name
-        valueField: name
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: false
+
+
+      - 
+        name: Portuguese
+        label: Portuguese
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
+
+
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: false
+
+
+      - 
+        name: Southern Sotho
+        label: Southern Sotho
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
+
+
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: false
+
+
+      - 
+        name: Tswana
+        label: Tswana
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
+
+
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: false
+
+
+      - 
+        name: Zulu
+        label: Zulu
+        widget: object
+        fields:
+
+          -
+            name: title
+            label: Title
+            widget: string
+            required: false
+
+
+          -
+            name: resource
+            label: resource Title
+            widget: string
+            required: false
 
 
 
@@ -378,6 +453,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: English      
       - 
         name: Questions
         label: Questions
@@ -424,6 +509,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: English        
         - 
           name: Content
           label: Questions
@@ -441,6 +536,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: Afrikaans      
       - 
         name: Questions
         label: Questions
@@ -487,6 +592,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: Afrikaans        
         - 
           name: Content
           label: Questions
@@ -504,6 +619,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: Spanish      
       - 
         name: Questions
         label: Questions
@@ -550,6 +675,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: Spanish        
         - 
           name: Content
           label: Questions
@@ -567,6 +702,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: Xhosa      
       - 
         name: Questions
         label: Questions
@@ -613,6 +758,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: Xhosa        
         - 
           name: Content
           label: Questions
@@ -630,6 +785,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: Northern Sotho      
       - 
         name: Questions
         label: Questions
@@ -676,6 +841,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: Northern Sotho        
         - 
           name: Content
           label: Questions
@@ -693,6 +868,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: Portuguese      
       - 
         name: Questions
         label: Questions
@@ -739,6 +924,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: Portuguese        
         - 
           name: Content
           label: Questions
@@ -756,6 +951,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: Southern Sotho      
       - 
         name: Questions
         label: Questions
@@ -802,6 +1007,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: Southern Sotho        
         - 
           name: Content
           label: Questions
@@ -819,6 +1034,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: Tswana      
       - 
         name: Questions
         label: Questions
@@ -865,6 +1090,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: Tswana        
         - 
           name: Content
           label: Questions
@@ -882,6 +1117,16 @@ collections:
         name: title
         label: Title
         widget: string
+      -
+        name: type
+        label: Type
+        widget: hidden
+        default: Questions
+      -
+        name: language
+        label: language
+        widget: hidden
+        default: Zulu      
       - 
         name: Questions
         label: Questions
@@ -928,6 +1173,16 @@ collections:
           name: title
           label: Title
           widget: string
+        -
+          name: type
+          label: Type
+          widget: hidden
+          default: Resources
+        -
+          name: language
+          label: language
+          widget: hidden
+          default: Zulu        
         - 
           name: Content
           label: Questions

@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "gatsby build",
+    "build:cms": "node tooling/node/buildCmsConfig",
     "build:docs": "docz build",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
@@ -34,6 +35,7 @@
     "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "change-case": "^3.0.2",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
     "gatsby-plugin-google-analytics": "^2.0.8",
@@ -46,6 +48,8 @@
     "gatsby-plugin-sentry": "^1.0.0",
     "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-plugin-styled-components": "^3.0.4",
+    "gatsby-source-filesystem": "^2.0.12",
+    "gatsby-transformer-remark": "^2.1.19",
     "jest": "^23.6.0",
     "netlify-cms": "^2.3.2",
     "regenerator-runtime": "^0.13.1"
