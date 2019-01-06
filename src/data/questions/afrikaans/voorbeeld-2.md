@@ -1,12 +1,12 @@
 ---
-title: Example 1
+title: Voorbeeld 2
 type: Questions
-language: English
+language: Afrikaans
 Questions:
-  - description: Question 1
+  - description: Vraag 1
     formatOfAnswer: True or False
     options:
       - {}
-    question: Question 1
+    question: Vraag 1
 ---
 
