@@ -1,11 +1,9 @@
 ---
-type: Pages
-page: Resources
+type: pages
+page: resources
 title: Example 1
 questions: Example 1
-Afrikaans:
-  resource: Voorbeeld 1
-  title: Voorbeeld 1
+Afrikaans: {}
 Spanish: {}
 Xhosa: {}
 Northern Sotho: {}
